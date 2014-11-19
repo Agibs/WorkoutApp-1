@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WorkoutApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<% if current_user %>
+		E-mail: <%= current_user.email %>
+		<%= link_to "Log out", logout_path%>
+		<%= link_to "Edit profile", edit_user_path(current_user) %>
+	<% else %>
+		<%= link_to "Sign up", signup_path %> or
+		<%= link_to "log in", login_path%>
+	<% end %>
+	
+
+	<%= yield %>
+
+</body>
+</html>
