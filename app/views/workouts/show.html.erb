@@ -1,2 +1,14 @@
 <h1>Workout show page</h1>
 <%= @workout.name%>
+
+<h2>Exercises</h2>
+<% @workout.exercises.each do |exercise| %>
+	Name: <%= exercise.name%>
+	
+<% end %>
+
+<%= form_for([@workout, @workout.exercises.build]) do |f| %>
+	<%= f.label :name%>
+	<%= f.text_field :name%>
+	<%= f.submit%>
+<%end%>

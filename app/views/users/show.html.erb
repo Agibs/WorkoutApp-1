@@ -9,7 +9,7 @@
 <h2>Workouts</h2>
 <% @user.workouts.each do |workout| %>
 	Name: <%= workout.name%>
-	<%= link_to "workout", "#{workout.user_id}/workouts/#{workout.id}" %>
+	<%= link_to "workout", workout_path(workout) %>
 <% end %>
 
 <h2>Start Workout</h2>

@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
    
+
   resources :sessions
+  
   resources :users do
-    resources :workouts
+    resources :workouts 
   end
+  
+ resources :workouts do
+      resources :exercises
+  end
+  
   root 'static_pages#home'
   
   get 'static_pages/home'
