@@ -5,3 +5,16 @@
 <h3>weight: </h3> <%= @user.weight%>
 <h3>height: </h3> <%= @user.height%>
 <h3>goal: </h3> <%= @user.goal%>
+
+<h2>Workouts</h2>
+<% @user.workouts.each do |workout| %>
+	Name: <%= workout.name%>
+<% end %>
+
+<h2>Start Workout</h2>
+
+<%= form_for([@user, @user.workouts.build]) do |f| %>
+	<%= f.label :name%>
+	<%= f.text_field :name%>
+	<%= f.submit%>
+<%end%>
