@@ -1,3 +1,31 @@
 <h1>Exercise show page</h1>
 <%= @exercise.name%>
 
+
+
+<h1>Sets Completed</h1>
+
+<% @exercise.exercise_sets.each do |exercise| %>
+
+    weight:<%= exercise.weight %>
+   reps:<%= exercise.reps %>
+
+<% end %>
+
+
+<h2>Add a Set:</h2>
+<%= form_for([@exercise, @exercise.exercise_sets.build]) do |f| %>
+  <p>
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight %>
+  </p>
+  <p>
+    <%= f.label :reps %><br>
+    <%= f.number_field :reps %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+

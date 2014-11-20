@@ -10,6 +10,10 @@ Rails.application.routes.draw do
  resources :workouts do
       resources :exercises
   end
+
+  resources :exercises do
+    resources :exercise_sets
+  end
   
   root 'static_pages#home'
   

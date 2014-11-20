@@ -4,6 +4,7 @@
 <h2>Exercises</h2>
 <% @workout.exercises.each do |exercise| %>
 	Name: <%= exercise.name%>
+	<%= link_to "add sets", exercise_path(exercise) %>
 	
 <% end %>
 
