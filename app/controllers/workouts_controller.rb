@@ -1,9 +1,13 @@
 class WorkoutsController < ApplicationController
   
+  def show
+    @workout = Workout.find(params[:id])
+  end
+  
   def create
     @user = User.find(params[:user_id])
     @workout = @user.workouts.create(workout_params)
-    redirect_to user_path(@workout)
+    redirect_to user_path(@user)
   end
   
   private
