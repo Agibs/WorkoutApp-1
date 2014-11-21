@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login @user
-      redirect_to root_url, :notice => "Thanks for signing up!, please complete yourself"
+      redirect_to @user, :notice => "Thanks for signing up!, please complete yourself"
     else
       render :new, :notice => "Signup has failed."
     end

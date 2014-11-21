@@ -18,7 +18,7 @@
 	<h2>Start Workout</h2>
 
 	<%= form_for([@user, @user.workouts.build]) do |f| %>
-		<%= f.label :name%>
+		<%= f.label :DAY%>
 		<%= f.text_field :name%>
 		<%= f.submit%>
 	<%end%>
