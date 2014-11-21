@@ -1,35 +1,62 @@
-<div class="col-md-6">
+<div class="col-md-4 jumbotron">
 	<h1>User profile</h1>
-	<h3>email</h3><%= @user.email%>
-	<h3>name: </h3><%= @user.name%>
-	<h3>age: </h3> <%= @user.age%>
-	<h3>weight: </h3> <%= @user.weight%>
-	<h3>height: </h3> <%= @user.height%>
-	<h3>goal: </h3> <%= @user.goal%>
+	<h3>email:</h3><%= @user.email%>
+	<h3>name: </h3>
+	<% if @user.name == nil %>
+				<p>please edit account</p>
+	<% else %>
+	<%= @user.name%>
+	<% end %>
+	<h3>age: </h3>
+	<% if @user.age == nil %>
+				<p>please edit account</p>
+	<% else %>
+	<%= @user.age%>
+	<% end %>
+	<h3>weight: </h3>
+	<% if @user.weight == nil %>
+				<p>please edit account</p>
+	<% else %>
+	<%= @user.weight%>
+	<% end %>
+	<h3>height: </h3>
+	<% if @user.height == nil %>
+				<p>please edit account</p>
+	<% else %>
+	<%= @user.height%>
+	<% end %>
+	<h3>goal: </h3>
+	<% if @user.goal == nil %>
+				<p>please edit account</p>
+	<% else %>
+	<%= @user.goal%>
+	<% end %>
 </div>
 
 
-<div class="col-md-6">
+<div class="col-md-6 col-md-offset-1 jumbotron">
 	<h2>Workouts</h2>
 <% @user.workouts.each do |workout| %>
-	Name: <%= workout.name%>
-	<%= link_to "workout", workout_path(workout) %>
-	<%= link_to "Delete", workout_path(workout),
+<div class="col-md-6">
+	Day: <%= workout.name%>
+	<%= link_to "workout", workout_path(workout) , class: "btn btn-primary" %>
+	<%= link_to "Delete", workout_path(workout), class: "btn btn-danger",
 	data: { confirm: 'Are you sure?'}, :method => :delete%>
+</div>
 <% end %>
 
+	<div class: "col-md-4">
 	<h2>Start Workout</h2>
 
-	<%= form_for([@user, @user.workouts.build]) do |f| %>
-		<%= f.label :DAY%>
-		<%= f.text_field :name%>
-		<%= f.submit%>
-	<%end%>
+		<%= form_for([@user, @user.workouts.build]) do |f| %>
+			<%= f.label :DAY%>
+			<%= f.text_field :name%>
+			<%= f.submit class: "btn btn-success"%>
+		<%end%>
+	</div>
+
 </div>
 
-<h2>Delete Account</h2>
-<%= link_to "Delete", user_path(@user),
-data: { confirm: 'Are you sure?'}, :method => :delete%>
 
 
 

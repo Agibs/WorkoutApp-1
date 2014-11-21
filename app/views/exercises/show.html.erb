@@ -9,8 +9,8 @@
    weight:<%= exercise.weight %>
    reps:<%= exercise.reps %>
    
-   <%= link_to "Delete", exercise_exercise_set_path(exercise, @exercise),
-	data: { confirm: 'Are you sure?'}, :method => :delete%>
+   <%= link_to "Delete Set", exercise_exercise_set_path(exercise, @exercise),
+	data: { confirm: 'Are you sure?'}, :method => :delete, class: "btn btn-danger"%>
 
    
    	
@@ -28,7 +28,7 @@
     <%= f.number_field :reps %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-success" %>
   </p>
 <% end %>
 
