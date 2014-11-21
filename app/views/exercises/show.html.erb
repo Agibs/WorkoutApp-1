@@ -1,5 +1,5 @@
 <h1>Exercise show page</h1>
-<%= @exercise.name%>
+<%= link_to @exercise.name,  workout_path(@exercise.workout_id)%>
 
 
 <h1>Sets Completed</h1>
