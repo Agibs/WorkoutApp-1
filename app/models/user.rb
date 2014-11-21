@@ -1,8 +1,9 @@
+
 class User < ActiveRecord::Base
   
   authenticates_with_sorcery!
   
-  has_many :workouts
+  has_many :workouts, dependent: :destroy
 
   
   validates_confirmation_of :password
@@ -10,3 +11,4 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
 end
+
