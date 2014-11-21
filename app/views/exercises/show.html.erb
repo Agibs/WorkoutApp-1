@@ -6,9 +6,12 @@
 <h1>Sets Completed</h1>
 
 <% @exercise.exercise_sets.each do |exercise| %>
-
+   <div class="col-md-12">
+    set: <%= exercise.id %> 
     weight:<%= exercise.weight %>
-   reps:<%= exercise.reps %>
+    reps:<%= exercise.reps %>
+   </div>
+  
 
 <% end %>
 

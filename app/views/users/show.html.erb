@@ -1,21 +1,27 @@
-<h1>User profile</h1>
-<h3>email</h3><%= @user.email%>
-<h3>name: </h3><%= @user.name%>
-<h3>age: </h3> <%= @user.age%>
-<h3>weight: </h3> <%= @user.weight%>
-<h3>height: </h3> <%= @user.height%>
-<h3>goal: </h3> <%= @user.goal%>
+<div class="col-md-6">
+	<h1>User profile</h1>
+	<h3>email</h3><%= @user.email%>
+	<h3>name: </h3><%= @user.name%>
+	<h3>age: </h3> <%= @user.age%>
+	<h3>weight: </h3> <%= @user.weight%>
+	<h3>height: </h3> <%= @user.height%>
+	<h3>goal: </h3> <%= @user.goal%>
+</div>
 
-<h2>Workouts</h2>
-<% @user.workouts.each do |workout| %>
-	Name: <%= workout.name%>
-	<%= link_to "workout", workout_path(workout) %>
-<% end %>
+<div class="col-md-6">
+	<h2>Workouts</h2>
+	<% @user.workouts.each do |workout| %>
+		Day: <%= workout.name%>
+		<%= link_to "workout", workout_path(workout) %>
+	<% end %>
 
-<h2>Start Workout</h2>
+	<h2>Start Workout</h2>
 
-<%= form_for([@user, @user.workouts.build]) do |f| %>
-	<%= f.label :name%>
-	<%= f.text_field :name%>
-	<%= f.submit%>
-<%end%>
+	<%= form_for([@user, @user.workouts.build]) do |f| %>
+		<%= f.label :name%>
+		<%= f.text_field :name%>
+		<%= f.submit%>
+	<%end%>
+</div>
+
+
