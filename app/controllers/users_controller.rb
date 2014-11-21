@@ -30,6 +30,12 @@ class UsersController < ApplicationController
       render :new, :notice => "Signup has failed."
     end
   end
+  
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to root_url
+  end
 
   private 
   def user_params

@@ -11,6 +11,13 @@ class WorkoutsController < ApplicationController
     redirect_to user_path(@user)
   end
   
+  def destroy       
+    @workout = Workout.find(params[:id])
+    @user = User.find(@workout.user_id)  
+    @workout.destroy
+    redirect_to user_path(@user)
+  end
+  
   private
   def workout_params
     params.require(:workout).permit(:name)

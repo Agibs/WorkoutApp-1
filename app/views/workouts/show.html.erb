@@ -5,7 +5,8 @@
 <% @workout.exercises.each do |exercise| %>
 	Name: <%= exercise.name%>
 	<%= link_to "add sets", exercise_path(exercise) %>
-	
+	<%= link_to "Delete", exercise_path(exercise),
+	data: { confirm: 'Are you sure?'}, :method => :delete%>
 <% end %>
 
 <%= form_for([@workout, @workout.exercises.build]) do |f| %>

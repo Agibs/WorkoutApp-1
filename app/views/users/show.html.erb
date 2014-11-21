@@ -6,10 +6,16 @@
 <h3>height: </h3> <%= @user.height%>
 <h3>goal: </h3> <%= @user.goal%>
 
+<h2>Delete Account</h2>
+<%= link_to "Delete", user_path(@user),
+data: { confirm: 'Are you sure?'}, :method => :delete%>
+
 <h2>Workouts</h2>
 <% @user.workouts.each do |workout| %>
 	Name: <%= workout.name%>
 	<%= link_to "workout", workout_path(workout) %>
+	<%= link_to "Delete", workout_path(workout),
+	data: { confirm: 'Are you sure?'}, :method => :delete%>
 <% end %>
 
 <h2>Start Workout</h2>

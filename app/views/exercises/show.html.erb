@@ -2,14 +2,18 @@
 <%= @exercise.name%>
 
 
-
 <h1>Sets Completed</h1>
 
 <% @exercise.exercise_sets.each do |exercise| %>
 
-    weight:<%= exercise.weight %>
+   weight:<%= exercise.weight %>
    reps:<%= exercise.reps %>
+   
+   <%= link_to "Delete", exercise_exercise_set_path(exercise, @exercise),
+	data: { confirm: 'Are you sure?'}, :method => :delete%>
 
+   
+   	
 <% end %>
 
 
