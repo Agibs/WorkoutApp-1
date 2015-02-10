@@ -2,7 +2,8 @@ class WorkoutsController < ApplicationController
   
   def show
     @workout = Workout.find(params[:id])
-    @user = User.find(@workout.user_id)    
+    @user = User.find(@workout.user_id)  
+    #@excercises = Excercise.find(@workout.workout_id)  
   end
   
   def create
@@ -20,7 +21,7 @@ class WorkoutsController < ApplicationController
   
   private
   def workout_params
-    params.require(:workout).permit(:name)
+    params.require(:workout).permit(:workout_date)
   end
     
 end

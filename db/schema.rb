@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120213741) do
+ActiveRecord::Schema.define(version: 20150210161818) do
 
   create_table "exercise_sets", force: true do |t|
     t.integer  "reps"
@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 20141120213741) do
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token"
 
   create_table "workouts", force: true do |t|
-    t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "workout_date"
   end
 
   add_index "workouts", ["user_id"], name: "index_workouts_on_user_id"
