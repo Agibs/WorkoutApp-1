@@ -10,8 +10,7 @@ def create
     redirect_to @user, :notice => "Logged in!"
   else
     flash.now.alert = "Email or password was invalid"
-    redirect_to root_url
-    #render :new
+    redirect_to new_session_path
   end
 end
 
