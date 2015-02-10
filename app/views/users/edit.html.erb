@@ -2,55 +2,53 @@
 	<h1>Update your profile</h1>
 
 	<%= form_for(@user) do |f| %>
-			<div>
+			<div class="field form-group">
 				<%= f.label :email %>
-				<%= f.text_field :email %>
+				<%= f.text_field :email, :class => 'form-control' %>
 			</div>
 			
-			<div>
+			<div class="field form-group">
 				<%= f.label :name %>
-				<%= f.text_field :name %>
+				<%= f.text_field :name, :class => 'form-control' %>
 			</div>
 
-			<div>
+			<div class="field form-group">
 				<%= f.label :age %>
-				<%= f.text_field :age %>
+				<%= f.text_field :age, :class => 'form-control' %>
 			</div>
 
-			<div>
+			<div class="field form-group">
 				<%= f.label :height %>
-				<%= f.number_field :height %>
+				<%= f.number_field :height, :class => 'form-control' %>
 			</div>
 
-			<div>
+			<div class="field form-group">
 				<%= f.label :weight %>
-				<%= f.number_field :weight %>
+				<%= f.number_field :weight, :class => 'form-control' %>
 			</div>
 
-			<div>
+			<div class="field form-group">
 				<%= f.label :goal %>
-				<%= f.text_field :goal, :size => 150%> 
+				<%= f.text_field :goal, :class => 'form-control', :size => 150%> 
 			</div>
 
-			<div>
+			<div class="field form-group">
 				<%= f.label :password %>
-				<%= f.password_field :password %> 
+				<%= f.password_field :password, :class => 'form-control' %> 
 			</div>
 
-			<div>
+			<div class="field form-group">
 				<%= f.label :password_confirmation %>
-				<%= f.password_field :password_confirmation %>
+				<%= f.password_field :password_confirmation, :class => 'form-control' %>
 			</div>
 
 			<div>
-				<%= f.submit "Update profile" %>
+				<%= f.submit "Update profile", :class => "btn btn-success" %>
+				<%= link_to "Delete Account", user_path(@user),class: "btn btn-danger",
+	data: { confirm: 'Are you sure?'}, :method => :delete%>
 			</div>
 	<% end %> 
 </div>
 
-<div class="col-md-12">
-	<%= link_to "Delete Account", user_path(@user),class: "btn btn-danger",
-	data: { confirm: 'Are you sure?'}, :method => :delete%>
-</div>
 
 
