@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login @user
-      redirect_to @user, :notice => "Thanks for signing up!, please complete yourself"
+      redirect_to @user, :notice => "Thanks for signing up!, please complete your profile"
     else
       render :new, :notice => "Signup has failed."
     end
@@ -38,6 +38,7 @@ class UsersController < ApplicationController
   end
 
   private 
+  
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :height, :age, :goal, :name, :weight )
   end

@@ -41,7 +41,7 @@
 	Day: <%= workout.name%>
 	<%= link_to "workout", workout_path(workout) , class: "btn btn-primary" %>
 	<%= link_to "Delete", workout_path(workout), class: "btn btn-danger",
-	data: { confirm: 'Are you sure?'}, :method => :delete%>
+	data: { confirm: 'Are you sure?'}, :method => :delete %>
 </div>
 <% end %>
 

@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
+ 
  def new
-   
+   #renders the sign in page
  end
    
 def create
